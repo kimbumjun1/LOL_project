@@ -24,7 +24,9 @@ function NavBar() {
         <div className="menu_left">
           <LeftMenu mode="horizontal" />
         </div>
+        {/*추가한부분 - Search-bar */}
         <div className="menu_rigth">
+          <SearchBar className="menu_search" />
           <RightMenu mode="horizontal" />
         </div>
         <Button

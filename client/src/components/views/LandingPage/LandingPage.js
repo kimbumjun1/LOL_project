@@ -8,6 +8,15 @@ import Checkbox from './Sections/CheckBox';
 import Radiobox from './Sections/RadioBox';
 import SearchFeature from './Sections/SearchFeature';
 import { continents, price } from './Sections/Datas';
+{/**추가 - HEEJEONG */}
+import 'pure-react-carousel/dist/react-carousel.es.css';
+import "slick-carousel/slick/slick.css";
+import "slick-carousel/slick/slick-theme.css";
+import Slider from 'react-slick';
+import styled from 'styled-components';
+import useHover from '../../../hooks/useHover';
+import { auto } from 'async';
+import './Sections/LandingPage.css';
 
 function LandingPage() {
 
@@ -137,14 +146,160 @@ function LandingPage() {
 
     }
 
+    {/* slider-bar - Carousel에 사용 - HEEJEONG*/ }
+    const contentStyle = { 
+        height: '320px',
+        width: '100%'
+      };
+
+    const settings = {
+        arrows: true,
+        dots: true,
+        infinite: true,
+        speed: 500,
+        slidesToShow: 3,
+        slidesToScroll: 1,
+        centerMode: true,
+        centerPadding: '0px',
+
+        responseive: [ //반응형 구현 옵션
+            {
+                breakpoint: 1200,
+                settings: {
+                    slidesToShow: 3,
+                    slidesToScroll: 3
+                }
+            },
+            {
+                breakpoint: 1023,
+                settings: {
+                    slidesToShow: 3,
+                    slidesToScroll: 3
+                }
+            },
+            {
+                breakpoint: 767,
+                settings: {
+                    slidesToShow: 1,
+                    slidesToScroll: 1
+                }
+            }            
+        ]
+    };
+
+    const sliderStyle = {
+        width:"80%", 
+        height:"500px", 
+        borderRadius:"20px", 
+        boxShadow:"20px 20px 15px 2px rgb(199, 198, 198)",
+        margin: "0 auto" // 슬라이더 내부 요소들 가운데 배치
+    };
+
+    const Wrap = styled.div`
+        margin: 0 auto;
+        margin-bottom: 10%;
+        width: 100%;
+        
+        .slick-slide {
+            margin: 1% auto;
+        }
+        .slick-list {
+            margin: 0 5px;
+        }
+        
+        .slick-prev:before {
+            font-size: 30px;
+            opacity: 0.3;
+            color: grey;
+            left: 0;
+        }
+        .slick-next:before {
+            font-size: 30px;
+            opacity: 0.3;
+            color: grey;
+        }
+    `;
+
+    const [ref, hover] = useHover();
+    const [btnhide, setbtnHide] = useState(true); // 버튼숨기기
+
 
 
     return (
-        <div style={{ width: '75%', margin: '3rem auto' }}>
+        <div style={{ width: '90%', margin: '0 auto' }}>
 
             <div style={{ textAlign: 'center' }}>
-                <h2>Let's Travel Anywhere <Icon type="rocket" /> </h2>
+                <h2>NEW - 아무말이나 <Icon type="rocket" /> </h2>
             </div>
+
+            {/*Slider-bar-Carousel  - HEEJEONG*/}
+            <Wrap >
+            <Slider {...settings}>
+                <div className='slider_item' onMouseEnter={() => {setbtnHide(false)}} onMouseLeave={() => {setbtnHide(true)}}>
+                    <h3 style={{ textAlign: 'center' }}>1</h3>
+                    <a href=''> 
+                    <img 
+                    style={sliderStyle} 
+                    src='images/legoImg2.jpg' />
+                    </a>
+                </div>
+                <div className='slider_item'>
+                    <h3 style={{ textAlign: 'center' }}>2</h3>
+                    <img 
+                    style={sliderStyle} 
+                    src='images/legoImg2.jpg' />
+                </div>
+                <div className='slider_item'>
+                    <h3 style={{ textAlign: 'center' }}>3</h3>
+                    <img 
+                    style={sliderStyle} 
+                    src='images/legoImg2.jpg' />
+
+                </div>
+                <div className='slider_item'>
+                    <h3 style={{ textAlign: 'center' }}>4</h3>
+                    <img 
+                    style={sliderStyle} 
+                    src='images/legoImg2.jpg' />
+                    
+                </div>
+                <div className='slider_item'>
+                    <h3 style={{ textAlign: 'center' }}>5</h3>
+                    <img 
+                    style={sliderStyle} 
+                    src='images/legoImg2.jpg' />
+
+                </div>
+                <div className='slider_item'>
+                    <h3 style={{ textAlign: 'center' }}>6</h3>
+                    <img 
+                    style={sliderStyle} 
+                    src='images/legoImg3.jpg' />
+
+                </div>
+            </Slider>
+            </Wrap>
+
+            <Carousel autoplay >
+                <div >
+                    <h3 style={{textAlign:'center'}}>1
+                    <img style={contentStyle} src='images/Lego-banner2.JPG' />
+                    </h3>
+                </div>
+                <div >
+                    <h3 style={{textAlign:'center'}}>2
+                    <img style={contentStyle} src='images/Lego-banner3.JPG' /></h3>
+                </div>
+                <div >
+                    <h3 style={{textAlign:'center'}}>3
+                    <img style={contentStyle} src='images/Lego-banner1.JPG' /></h3>
+                </div>
+                
+            </Carousel>
+
+            
+
+        
 
             {/* Filter */}
 
