@@ -11,6 +11,7 @@ import UploadProductPage from "./views/UploadProductPage/UploadProductPage.js";
 import DetailProductPage from "./views/DetailProductPage/DetailProductPage";
 import CartPage from './views/CartPage/CartPage';
 import HistoryPage from './views/HistoryPage/HistoryPage';
+import LandingPage_copy from "./views/LandingPage/LandingPage_copy.js";
 
 //null   Anyone Can go inside
 //true   only logged in user can go inside
@@ -28,6 +29,7 @@ function App() {
         
         <Switch>
           <Route exact path="/" component={Auth(LandingPage, null)} />
+          <Route exact path="/2"component={Auth(LandingPage_copy, null)}/>
           <Route exact path="/login" component={Auth(LoginPage, false)} />
           <Route exact path="/register" component={Auth(RegisterPage, false)} />
           <Route exact path="/product/upload" component={Auth(UploadProductPage, true)} />

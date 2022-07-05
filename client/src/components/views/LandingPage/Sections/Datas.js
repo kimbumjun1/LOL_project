@@ -1,31 +1,33 @@
 const continents = [
     {
         "_id": 1,
-        "name": "Africa"
+        "name": "마블",
+        "array" : [] 
     },
     {
         "_id": 2,
-        "name": "Europe"
+        "name": "해리포터",
+        "array" : [] 
     },
     {
         "_id": 3,
-        "name": "Asia"
+        "name": "겨울왕국",
+        "array" : [] 
     },
     {
         "_id": 4,
-        "name": "North America"
+        "name": "디즈니",
+        "array" : [] 
     },
     {
         "_id": 5,
-        "name": "South America"
+        "name": "DC",
+        "array" : [] 
     },
     {
         "_id": 6,
-        "name": "Australia"
-    },
-    {
-        "_id": 7,
-        "name": "Antarctica"
+        "name": "미니언즈",
+        "array" : [] 
     }
 
 ]
@@ -38,28 +40,23 @@ const price = [
     },
     {
         "_id": 1,
-        "name": "$0 to $199",
+        "name": "$0 ~ $299",
         "array": [0, 199]
     },
     {
         "_id": 2,
-        "name": "$200 to $249",
-        "array": [200, 249]
+        "name": "$300 ~ $599",
+        "array": [300, 599]
     },
     {
         "_id": 3,
-        "name": "$250 to $279",
-        "array": [250, 279]
+        "name": "$600 ~ $899",
+        "array": [600, 899]
     },
     {
         "_id": 4,
-        "name": "$280 to $299",
-        "array": [280, 299]
-    },
-    {
-        "_id": 5,
-        "name": "More than $300",
-        "array": [300, 1500000]
+        "name": "$900 ↑",
+        "array": [900, 1500000]
     }
 ]
 

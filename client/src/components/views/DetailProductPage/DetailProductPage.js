@@ -2,7 +2,8 @@ import React, { useEffect, useState } from 'react'
 import axios from 'axios';
 import ProductImage from './Sections/ProductImage';
 import ProductInfo from './Sections/ProductInfo';
-import { Row, Col } from 'antd';
+import { Row, Col} from 'antd';
+
 
 function DetailProductPage(props) {
 
@@ -32,19 +33,18 @@ function DetailProductPage(props) {
             <Row gutter={[16, 16]} >
                 <Col lg={12} sm={24}>
                     {/* ProductImage */}
-                    <ProductImage detail={Product} />
+                    <ProductImage detail={Product}/>
                 </Col>
-                <Col lg={12} sm={24}>
+                <Col lg={16} sm={21}>
                     {/* ProductInfo */}
                     <ProductInfo detail={Product} />
                 </Col>
+                
             </Row>
-
-
-
-
-
+            
         </div>
+        
+        
     )
 }
 
