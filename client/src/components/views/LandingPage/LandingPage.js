@@ -1,22 +1,22 @@
 import React, { useEffect, useState } from 'react'
-import { FaCode } from "react-icons/fa";
-import axios from "axios";
 import { Icon, Col, Card, Row, Carousel } from 'antd';
-import Meta from 'antd/lib/card/Meta';
 import ImageSlider from '../../utils/ImageSlider';
+import { FaCode } from "react-icons/fa";
+import { auto } from 'async';
+import { continents, price } from './Sections/Datas';
+import axios from "axios";
+import Meta from 'antd/lib/card/Meta';
 import Checkbox from './Sections/CheckBox';
 import Radiobox from './Sections/RadioBox';
 import SearchFeature from './Sections/SearchFeature';
-import { continents, price } from './Sections/Datas';
-{/**추가 - HEEJEONG */}
 import 'pure-react-carousel/dist/react-carousel.es.css';
 import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
 import Slider from 'react-slick';
 import styled from 'styled-components';
 import useHover from '../../../hooks/useHover';
-import { auto } from 'async';
 import './Sections/LandingPage.css';
+
 
 function LandingPage() {
 
@@ -301,45 +301,15 @@ function LandingPage() {
 
         
 
-            {/* Filter */}
-
-            <Row gutter={[16, 16]}>
-                <Col lg={12} xs={24}>
-                    {/* CheckBox */}
-                    <Checkbox list={continents} handleFilters={filters => handleFilters(filters,"continents ")} />
-                </Col>
-                <Col lg={12} xs={24}>
-                    {/* RadioBox */}
-                    <Radiobox list={price} handleFilters={filters => handleFilters(filters, "price")} />
-                </Col>
-            </Row>
+           
 
 
 
 
-
-            {/* Search */}
-
-            <div style={{ display: 'flex', justifyContent: 'flex-end', margin: '1rem auto' }}>
-                <SearchFeature
-                    refreshFunction={updateSearchTerm}
-                />
-            </div>
-
-            {/* Cards */}
+         
 
 
-            <Row gutter={[16, 16]} >
-                {renderCards}
-            </Row>
-
-            <br />
-
-            {PostSize >= Limit &&
-                <div style={{ display: 'flex', justifyContent: 'center' }}>
-                    <button onClick={loadMoreHanlder}>더보기</button>
-                </div>
-            }
+            
 
         </div>
     )

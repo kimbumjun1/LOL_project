@@ -3,6 +3,8 @@ import LeftMenu from './Sections/LeftMenu';
 import RightMenu from './Sections/RightMenu';
 import { Drawer, Button, Icon } from 'antd';
 import './Sections/Navbar.css';
+import SearchBar from './Sections/SearchBar';
+import useHover from '../../../hooks/useHover';
 
 function NavBar() {
   const [visible, setVisible] = useState(false)
@@ -10,15 +12,15 @@ function NavBar() {
   const showDrawer = () => {
     setVisible(true)
   };
-
   const onClose = () => {
     setVisible(false)
   };
 
+  const [ref ,hover] = useHover();
   return (
     <nav className="menu" style={{ zIndex: 5, width: '100%' }}>
-      <div className="menu__logo">
-        <a href="/">LEGO</a>
+      <div className="menu__logo" ref = {ref}>
+        <a href="/">{hover ? <img style={{width:"100px", height:"100px"}} src="images/lego-logo-yellow.png"/> : <img style={{width:"100px", height:"100px"}} src="images/lego-logo-red.png" />}</a>
       </div>
       <div className="menu__container">
         <div className="menu_left">
