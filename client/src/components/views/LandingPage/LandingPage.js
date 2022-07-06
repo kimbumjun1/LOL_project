@@ -222,9 +222,7 @@ function LandingPage() {
 
     const [ref, hover] = useHover();
     const [btnhide, setbtnHide] = useState(true); // 버튼숨기기
-
-
-
+    
     return (
         <div style={{ width: '90%', margin: '0 auto' }}>
 
@@ -235,14 +233,15 @@ function LandingPage() {
             {/*Slider-bar-Carousel  - HEEJEONG*/}
             <Wrap >
             <Slider {...settings}>
-                <div className='slider_item' onMouseEnter={() => {setbtnHide(false)}} onMouseLeave={() => {setbtnHide(true)}}>
+                <div className='slider_item' /*onMouseEnter={() => {setbtnHide(false)}} onMouseLeave={() => {setbtnHide(true)}}*/>
                     <h3 style={{ textAlign: 'center' }}>1</h3>
                     <a href=''> 
                     <img 
                     style={sliderStyle} 
-                    src='images/legoImg2.jpg' />
+                    src='images/legoImg2.jpg' onmouseover='images/legoImg3.jpg' onmouseout= 'images/legoImg5.jpg'/>
                     </a>
                 </div>
+                
                 <div className='slider_item'>
                     <h3 style={{ textAlign: 'center' }}>2</h3>
                     <img 

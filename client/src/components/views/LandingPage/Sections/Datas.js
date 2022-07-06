@@ -1,3 +1,4 @@
+ //시리즈 분류
 const continents = [
     {
         "_id": 1,
@@ -31,7 +32,7 @@ const continents = [
     }
 
 ]
-
+//가격 분류
 const price = [
     {
         "_id": 0,

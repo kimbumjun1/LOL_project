@@ -28,4 +28,4 @@ function ProductImage(props) {
     )
 }
 
-export default ProductImage
+export default ProductImagegit 
