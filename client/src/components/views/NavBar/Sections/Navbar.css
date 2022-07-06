@@ -45,6 +45,10 @@
   float: right;
 }
 
+.menu_rigth {
+  display: flex;
+}
+
 .menu__mobile-button {
   float: right;
   height: 32px;
