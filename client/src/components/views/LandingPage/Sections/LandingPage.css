@@ -1,3 +1,27 @@
-.slider_item img:hover{
-    opacity: 0.5;
+.slider_item {
+    position: relative;
+    
+}
+
+.slider_btn {
+    cursor: pointer;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    box-sizing: border-box;
+    appearance: none;
+    background-color: white;
+    border: 2px solid Gold;
+    /*border-radius: 0.6rem;*/
+    font-size: 15px;
+    font-weight: 600;
+    padding: 0.3rem 1rem;
+    color:Gold;
+    transition: box-shadow 300ms ease-in-out, color 300ms ease-in-out;
+
+}
+.slider_btn:hover {
+    color: white;
+    box-shadow: 0 0 40px 40px Gold inset;
 }

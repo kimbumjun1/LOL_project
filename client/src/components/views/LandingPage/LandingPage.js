@@ -1,22 +1,21 @@
-import React, { useEffect, useState } from 'react'
-import { Icon, Col, Card, Row, Carousel } from 'antd';
-import ImageSlider from '../../utils/ImageSlider';
+import React, { useCallback, useEffect, useState } from 'react'
 import { FaCode } from "react-icons/fa";
-import { auto } from 'async';
-import { continents, price } from './Sections/Datas';
 import axios from "axios";
+import { Icon, Col, Card, Row, Carousel } from 'antd';
 import Meta from 'antd/lib/card/Meta';
+import ImageSlider from '../../utils/ImageSlider';
 import Checkbox from './Sections/CheckBox';
 import Radiobox from './Sections/RadioBox';
 import SearchFeature from './Sections/SearchFeature';
+import { continents, price } from './Sections/Datas';
 import 'pure-react-carousel/dist/react-carousel.es.css';
 import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
 import Slider from 'react-slick';
 import styled from 'styled-components';
 import useHover from '../../../hooks/useHover';
+import { auto } from 'async';
 import './Sections/LandingPage.css';
-
 
 function LandingPage() {
 
@@ -56,7 +55,6 @@ function LandingPage() {
                 }
             })
     }
-
 
 
 
@@ -101,7 +99,6 @@ function LandingPage() {
         setSkip(0)
 
     }
-
 
     const handlePrice = (value) => {
         const data = price;
@@ -153,6 +150,7 @@ function LandingPage() {
       };
 
     const settings = {
+
         arrows: true,
         dots: true,
         infinite: true,
@@ -161,7 +159,8 @@ function LandingPage() {
         slidesToScroll: 1,
         centerMode: true,
         centerPadding: '0px',
-
+        focusOnSelect: true, // 선택하면 해당 아이템이 가운데로
+        
         responseive: [ //반응형 구현 옵션
             {
                 breakpoint: 1200,
@@ -190,15 +189,23 @@ function LandingPage() {
     const sliderStyle = {
         width:"80%", 
         height:"500px", 
-        borderRadius:"20px", 
-        boxShadow:"20px 20px 15px 2px rgb(199, 198, 198)",
+        //borderRadius:"20px", 
+        //boxShadow:"20px 20px 15px 2px rgb(199, 198, 198)",
         margin: "0 auto" // 슬라이더 내부 요소들 가운데 배치
     };
+    const hoveredSliderStyle = {
+        width:"80%", 
+        height:"500px", 
+        //borderRadius:"20px", 
+        //boxShadow:"20px 20px 15px 2px rgb(199, 198, 198)",
+        margin: "0 auto", // 슬라이더 내부 요소들 가운데 배치
+        opacity: "0.5"
+    }
 
     const Wrap = styled.div`
         margin: 0 auto;
         margin-bottom: 10%;
-        width: 100%;
+        width: 90%;
         
         .slick-slide {
             margin: 1% auto;
@@ -220,64 +227,118 @@ function LandingPage() {
         }
     `;
 
+    const [btnHide, setBtnHide] = useState(true);
     const [ref, hover] = useHover();
+<<<<<<< HEAD
     const [btnhide, setbtnHide] = useState(true); // 버튼숨기기
     
-    return (
-        <div style={{ width: '90%', margin: '0 auto' }}>
+=======
+ 
+    const [imgHovered, setImgHovered] = useState(false);
+    const [imgHovered2, setImgHovered2] = useState(false);
+    const [imgHovered3, setImgHovered3] = useState(false);
+    const [imgHovered4, setImgHovered4] = useState(false);
+    const [imgHovered5, setImgHovered5] = useState(false);
+    const [imgHovered6, setImgHovered6] = useState(false);
 
-            <div style={{ textAlign: 'center' }}>
+    const isHovering = () => {
+        console.log('hover 성공')
+    }
+
+    const handleClick = () => {
+        console.log('click 확인');
+    }
+
+>>>>>>> de9d68687579374f95fd75f0074a61cc954c873f
+    return (
+        <div style={{ width: '100%', margin: '0 auto' }} >
+            <div style={{ textAlign: 'center' }} >
                 <h2>NEW - 아무말이나 <Icon type="rocket" /> </h2>
             </div>
 
             {/*Slider-bar-Carousel  - HEEJEONG*/}
+            
             <Wrap >
+<<<<<<< HEAD
             <Slider {...settings}>
                 <div className='slider_item' /*onMouseEnter={() => {setbtnHide(false)}} onMouseLeave={() => {setbtnHide(true)}}*/>
+=======
+            <Slider {...settings} >
+                <div className='slider_item' onMouseEnter={() => setImgHovered(true)} onMouseLeave={() => setImgHovered(false)} >
+>>>>>>> de9d68687579374f95fd75f0074a61cc954c873f
                     <h3 style={{ textAlign: 'center' }}>1</h3>
-                    <a href=''> 
-                    <img 
+                    {imgHovered ? 
+                    <div ><img 
+                    style={hoveredSliderStyle} 
+                    src='images/legoImg5.jpg' /><a href='/'><button className='slider_btn' >View More</button></a></div> : 
+                    <div><img 
                     style={sliderStyle} 
+<<<<<<< HEAD
                     src='images/legoImg2.jpg' onmouseover='images/legoImg3.jpg' onmouseout= 'images/legoImg5.jpg'/>
                     </a>
                 </div>
                 
                 <div className='slider_item'>
-                    <h3 style={{ textAlign: 'center' }}>2</h3>
-                    <img 
-                    style={sliderStyle} 
-                    src='images/legoImg2.jpg' />
+=======
+                    src='images/legoImg2.jpg' /></div> }
                 </div>
-                <div className='slider_item'>
+                <div className='slider_item' onMouseEnter={() => setImgHovered2(true)} onMouseLeave={() => setImgHovered2(false)} >
+>>>>>>> de9d68687579374f95fd75f0074a61cc954c873f
+                    <h3 style={{ textAlign: 'center' }}>2</h3>
+                    {imgHovered2 ?
+                    <div ><img 
+                    style={hoveredSliderStyle} 
+                    src='images/legoImg5.jpg' /><button className='slider_btn' >View More</button></div> : 
+                    <img 
+                    style={sliderStyle}
+                    src='images/legoImg2.jpg' />
+                    }
+                </div>
+                <div className='slider_item' onMouseEnter={() => setImgHovered3(true)} onMouseLeave={() => setImgHovered3(false)}>
                     <h3 style={{ textAlign: 'center' }}>3</h3>
+                    {imgHovered3 ? 
+                    <div ><img 
+                    style={hoveredSliderStyle} 
+                    src='images/legoImg5.jpg' /><button className='slider_btn' >View More</button></div>: 
                     <img 
                     style={sliderStyle} 
-                    src='images/legoImg2.jpg' />
+                    src='images/legoImg2.jpg' /> }
 
                 </div>
-                <div className='slider_item'>
+                <div className='slider_item' onMouseEnter={() => setImgHovered4(true)} onMouseLeave={() => setImgHovered4(false)}>
                     <h3 style={{ textAlign: 'center' }}>4</h3>
+                    {imgHovered4 ? 
+                    <div ><img 
+                    style={hoveredSliderStyle} 
+                    src='images/legoImg5.jpg' /><button className='slider_btn' >View More</button></div>: 
                     <img 
                     style={sliderStyle} 
-                    src='images/legoImg2.jpg' />
+                    src='images/legoImg2.jpg' /> }
                     
                 </div>
-                <div className='slider_item'>
+                <div className='slider_item' onMouseEnter={() => setImgHovered5(true)} onMouseLeave={() => setImgHovered5(false)}>
                     <h3 style={{ textAlign: 'center' }}>5</h3>
+                    {imgHovered5 ? <div ><img 
+                    style={hoveredSliderStyle} 
+                    src='images/legoImg5.jpg' /><button className='slider_btn' >View More</button></div>: 
                     <img 
                     style={sliderStyle} 
-                    src='images/legoImg2.jpg' />
+                    src='images/legoImg2.jpg' /> }
 
                 </div>
-                <div className='slider_item'>
+                <div className='slider_item'onMouseEnter={() => setImgHovered6(true)} onMouseLeave={() => setImgHovered6(false)} >
                     <h3 style={{ textAlign: 'center' }}>6</h3>
+                    {imgHovered6 ? <div ><img 
+                    style={hoveredSliderStyle} 
+                    src='images/legoImg5.jpg' /><button className='slider_btn' >View More</button></div>: 
                     <img 
                     style={sliderStyle} 
-                    src='images/legoImg3.jpg' />
+                    src='images/legoImg3.jpg' /> }
 
                 </div>
             </Slider>
             </Wrap>
+            
 
             <Carousel autoplay >
                 <div >
@@ -298,20 +359,8 @@ function LandingPage() {
 
             
 
-        
-
-           
-
-
-
-
-         
-
-
-            
-
         </div>
     )
 }
 
-export default LandingPage
+export default LandingPage;
