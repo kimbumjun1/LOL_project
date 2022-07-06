@@ -1,5 +1,5 @@
 const mongoose = require('mongoose');
-
+//김범준 멋쟁이
 const paymentSchema = mongoose.Schema({
     user: {
         type: Array,
