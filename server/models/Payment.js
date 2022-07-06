@@ -1,6 +1,7 @@
 const mongoose = require('mongoose');
-//김범준 멋쟁이
-//나이스 나이스
+
+//아아아아아앙아아아아앙
+
 const paymentSchema = mongoose.Schema({
     user: {
         type: Array,
