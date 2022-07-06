@@ -1,7 +1,7 @@
 const mongoose = require('mongoose');
 
 //아아아아아앙아아아아앙
-
+//하이하이 하이하이 
 const paymentSchema = mongoose.Schema({
     user: {
         type: Array,
