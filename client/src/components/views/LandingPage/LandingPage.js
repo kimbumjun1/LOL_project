@@ -74,7 +74,7 @@ function LandingPage() {
 
 
     const renderCards = Products.map((product, index) => {
-
+ 
         return <Col lg={6} md={8} xs={24} key={index}>
             <Card
                 cover={<a href={`/product/${product._id}`} ><ImageSlider images={product.images} /></a>}
@@ -229,10 +229,6 @@ function LandingPage() {
 
     const [btnHide, setBtnHide] = useState(true);
     const [ref, hover] = useHover();
-<<<<<<< HEAD
-    const [btnhide, setbtnHide] = useState(true); // 버튼숨기기
-    
-=======
  
     const [imgHovered, setImgHovered] = useState(false);
     const [imgHovered2, setImgHovered2] = useState(false);
@@ -249,7 +245,6 @@ function LandingPage() {
         console.log('click 확인');
     }
 
->>>>>>> de9d68687579374f95fd75f0074a61cc954c873f
     return (
         <div style={{ width: '100%', margin: '0 auto' }} >
             <div style={{ textAlign: 'center' }} >
@@ -259,13 +254,8 @@ function LandingPage() {
             {/*Slider-bar-Carousel  - HEEJEONG*/}
             
             <Wrap >
-<<<<<<< HEAD
-            <Slider {...settings}>
-                <div className='slider_item' /*onMouseEnter={() => {setbtnHide(false)}} onMouseLeave={() => {setbtnHide(true)}}*/>
-=======
             <Slider {...settings} >
                 <div className='slider_item' onMouseEnter={() => setImgHovered(true)} onMouseLeave={() => setImgHovered(false)} >
->>>>>>> de9d68687579374f95fd75f0074a61cc954c873f
                     <h3 style={{ textAlign: 'center' }}>1</h3>
                     {imgHovered ? 
                     <div ><img 
@@ -273,17 +263,9 @@ function LandingPage() {
                     src='images/legoImg5.jpg' /><a href='/'><button className='slider_btn' >View More</button></a></div> : 
                     <div><img 
                     style={sliderStyle} 
-<<<<<<< HEAD
-                    src='images/legoImg2.jpg' onmouseover='images/legoImg3.jpg' onmouseout= 'images/legoImg5.jpg'/>
-                    </a>
-                </div>
-                
-                <div className='slider_item'>
-=======
                     src='images/legoImg2.jpg' /></div> }
                 </div>
                 <div className='slider_item' onMouseEnter={() => setImgHovered2(true)} onMouseLeave={() => setImgHovered2(false)} >
->>>>>>> de9d68687579374f95fd75f0074a61cc954c873f
                     <h3 style={{ textAlign: 'center' }}>2</h3>
                     {imgHovered2 ?
                     <div ><img 

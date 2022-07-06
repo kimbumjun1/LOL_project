@@ -8,21 +8,9 @@ import Checkbox from './Sections/CheckBox';
 import Radiobox from './Sections/RadioBox';
 import SearchFeature from './Sections/SearchFeature';
 import { continents, price } from './Sections/Datas';
-import { addToCart } from '../../../_actions/user_actions';
-import { Button } from 'antd';
-import { useDispatch } from 'react-redux';
 
+function LandingPage() {
 
-
-function LandingPage_copy(props) {
-
-    const dispatch = useDispatch();
-
-    const clickHandler = () => {
-        //필요한 정보를 Cart 필드에다가 넣어 준다.
-        dispatch(addToCart(props.detail._id))
-
-    }
     const [Products, setProducts] = useState([])
     const [Skip, setSkip] = useState(0)
     const [Limit, setLimit] = useState(8)
@@ -88,9 +76,6 @@ function LandingPage_copy(props) {
                     title={product.title}
                     description={`$${product.price}`}
                 />
-                <Button size="large" shape="round" type="danger" onClick={clickHandler}>
-                    Add to Cart
-                </Button>
             </Card>
         </Col>
     })
@@ -205,4 +190,4 @@ function LandingPage_copy(props) {
     )
 }
 
-export default LandingPage_copy
+export default LandingPage
