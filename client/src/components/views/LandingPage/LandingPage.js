@@ -9,7 +9,7 @@ import useHover from '../../../hooks/useHover';
 import './Sections/LandingPage.css';
 
 function LandingPage() {
-    
+
     {/* slider-bar - Carousel에 사용 - HEEJEONG*/ }
     const contentStyle = { 
         height: '320px',
