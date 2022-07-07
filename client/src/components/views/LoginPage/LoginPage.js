@@ -81,6 +81,7 @@ function LoginPage(props) {
         } = props;
         return (
           <div className="app">
+            <img style={{width:"5em", height:"5em"}} src="images/lego-person.png" />
 
             <Title level={2}>Log In</Title>
             <form onSubmit={handleSubmit} style={{ width: '350px' }}>

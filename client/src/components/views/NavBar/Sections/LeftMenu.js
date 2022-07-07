@@ -10,7 +10,7 @@ function LeftMenu(props) {
     <Menu.Item key="mail">
 
     </Menu.Item>
-    <SubMenu title={<span>메뉴</span>}>
+    <SubMenu title={<span>MENU</span>}>
       <MenuItemGroup title="시리즈별">
         <Menu.Item key="setting:1">마블</Menu.Item>
         <Menu.Item key="setting:2">디즈니</Menu.Item>

@@ -1,11 +1,12 @@
 @import '~antd/dist/antd.css';
 
 .menu {
-  padding: 0 20px;
-  border-bottom: solid 1px #e8e8e8;
+  position: fixed;
+  padding: 0 60px;
+  /* border-bottom: solid 1px #e8e8e8; 선 없애기*/
   overflow: auto;
   box-shadow: 0 0 30px #f3f1f1;
-  background-color: white;
+  background-color: white; /*원래 white*/
 }
 
 .menu__logo {
@@ -48,6 +49,7 @@
 .menu_rigth {
   display: flex;
 }
+
 
 .menu__mobile-button {
   float: right;
