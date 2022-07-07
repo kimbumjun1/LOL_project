@@ -12,7 +12,7 @@ module.exports = class Domain extends Sequelize.Model {
         type: Sequelize.ENUM('free', 'premium'),
         allowNull: false,
       },
-      //9장에서 카카오연동할때, 카카오developer에서 키를 줬음
+      //9장에서 카카오연동할때, 카카오developer에서 키를 줬음//
       //restapi키 등등 -> 그런 키를 발급해줄거다.
       clientSecret: {
         type: Sequelize.STRING(36),
