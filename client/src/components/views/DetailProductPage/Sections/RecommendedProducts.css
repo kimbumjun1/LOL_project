@@ -1,0 +1,23 @@
+.recommend-product {
+    transition: all 0.2s linear;
+}
+.recommend-product:hover {
+    transform: scale(1.03);
+}
+
+
+.recommend-product button {
+    cursor: pointer;
+    border-radius: 10px;
+    border: none;
+    width: 160px;
+    font-size:medium;
+    font-weight: 500;
+    color: white;
+    background-color: #0089FF;
+}
+.recommend-product button:hover, .recommend-product button:active {
+    border: 2px solid #0089FF;
+    color: #0089FF;
+    background-color: white;
+}

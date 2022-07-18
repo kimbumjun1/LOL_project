@@ -19,7 +19,7 @@ function ProductImage(props) {
             setImages(images)
         }
 
-    }, [props.detail])
+    }, [props.detail]) // props.detail 값이 바뀔 때마다 실행됨
 
     return (
         <div>

@@ -5,9 +5,8 @@ import { addToCart } from '../../../../_actions/user_actions';
 function ProductInfo(props) {
     const dispatch = useDispatch();
 
-
     const clickHandler = () => {
-        //필요한 정보를 Cart 필드에다가 넣어 준다.
+        //필요한 정보를 Cart 필드에다가 넣어 준다. 상품 id, 개수, 가격, 언제 장바구니에 넣었는지 날짜정보
         dispatch(addToCart(props.detail._id))
 
     }

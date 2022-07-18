@@ -1,5 +1,14 @@
 @import '~antd/dist/antd.css';
-
+span {
+  font-weight: 500;
+  color: black;
+}
+.menu__container {
+  margin-top: 1.3rem;
+}
+.search_bar {
+  margin-top: 1.2rem;
+}
 .menu {
   position: fixed;
   padding: 0 60px;
@@ -10,7 +19,7 @@
 }
 
 .menu__logo {
-  width: 150px;
+  /* width: 150px; */
   float: left;
 }
 
@@ -23,18 +32,21 @@
 
 .menu__container .ant-menu-item {
   padding: 0px 5px;
+  background-color: white; /*원래 white*/
 }
 
 .menu__container .ant-menu-submenu-title {
   padding: 10px 20px;
+  background-color: white; /*원래 white*/
 }
 
 .menu__container .ant-menu-item a,
 .menu__container .ant-menu-submenu-title a {
   padding: 10px 15px;
+  background-color: white; /*원래 white*/
 }
 
-.menu__container .ant-menu-horizontal {
+.menu__container .ant-menu-horizontal { /*.ant-menu-horizontal*/
   border-bottom: none;
 }
 

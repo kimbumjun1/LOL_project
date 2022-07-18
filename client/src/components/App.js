@@ -12,6 +12,7 @@ import DetailProductPage from "./views/DetailProductPage/DetailProductPage";
 import CartPage from './views/CartPage/CartPage';
 import HistoryPage from './views/HistoryPage/HistoryPage';
 import LandingPage_copy from "./views/LandingPage/LandingPage_copy.js";
+import DetailProductPage_copy from "./views/DetailProductPage/DetailProductPage_copy.js"
 
 //null   Anyone Can go inside
 //true   only logged in user can go inside
@@ -33,9 +34,10 @@ function App() {
           <Route exact path="/login" component={Auth(LoginPage, false)} />
           <Route exact path="/register" component={Auth(RegisterPage, false)} />
           <Route exact path="/product/upload" component={Auth(UploadProductPage, true)} />
-          <Route exact path="/product/:productId" component={Auth(DetailProductPage, null)} />
+          <Route exact path="/product/:productId" component={Auth(DetailProductPage_copy, null)} /> {/* 제품 상세페이지로 연결 */}
           <Route exact path="/user/cart" component={Auth(CartPage, true)} />
           <Route exact path="/history" component={Auth(HistoryPage, true)} />
+          <Route exact paah="/detailproduct" component={Auth(DetailProductPage_copy, true)} />
 
         </Switch>
       </div>

@@ -73,7 +73,7 @@ function UploadProductPage(props) {
 
 
     return (
-        <div style={{ maxWidth: '700px', margin: '2rem auto' }}>
+        <div style={{ maxWidth: '700px', margin: '0 auto', paddingTop:'8em' }}>
             <div style={{ textAlign: 'center', marginBottom: '2rem' }}>
                 <h2> 여행 상품 업로드</h2>
             </div>

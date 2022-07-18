@@ -20,12 +20,13 @@ function DetailProductPage(props) {
     }, [])
 
 
-
     return (
-        <div style={{ width: '100%', padding: '3rem 4rem' }}>
+        <div style={{ width: '100%', margin: '0 auto', paddingTop: '8em'  }}>
 
             <div style={{ display: 'flex', justifyContent: 'center' }}>
                 <h1>{Product.title}</h1>
+                <h2>테스트</h2>
+                <h2>DetailProductPage 페이지</h2>
             </div>
 
             <br />

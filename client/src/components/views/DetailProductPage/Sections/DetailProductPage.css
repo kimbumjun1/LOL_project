@@ -1,0 +1,77 @@
+@import url('https://fonts.googleapis.com/css2?family=Noto+Sans+KR&display=swap');
+div {
+    font-family: 'Noto Sans KR', sans-serif;
+}
+.product_count {
+    display:flex;
+    justify-content: center; 
+    padding:5px 0;
+    margin: 10px 0;
+    width: 160px;
+    background-color: rgb(245, 245, 245);
+    border-radius: 10px;
+}
+.product_count button{
+    /* display: inline-block; */
+    width: 45px;
+    height: 45px;
+    color: black;
+    background-color: white;
+    /* line-height: 40px; */
+    text-align: center;
+    border: none;
+    border-radius: 10px;
+}
+.count_plus, .count_minus {
+    cursor: pointer;
+    font-weight: bold;
+    font-size:x-large;
+}
+.count_result {
+    font-size: x-large;
+    width:60px;
+    height: 45px;
+    text-align: center;
+    line-height: 45px;
+}
+
+.product_description {
+    /* align-content: space-around; 균등한 여백으로 수직 정렬 */
+
+}
+
+.product_btn {
+    cursor: pointer;
+    margin-right: 10px;
+    border-radius: 10px;
+    border: none;
+    width: 160px;
+    font-size:medium;
+    font-weight: 500;
+    color: white;
+    background-color: #0089FF; /*lightcoral, coral #0089FF cornflowerblue*/
+    /* box-shadow: 0 0 40px 40px cornflowerblue inset; */
+}
+/* .product_btn:last-child {
+    cursor: pointer;
+    margin-right: 10px;
+    border-radius: 10px;
+    width: 160px;
+    font-size:medium;
+    font-weight: 500;
+    border: 1px solid cornflowerblue;
+    color: cornflowerblue;
+    background-color: white;
+} */
+
+.product_btn:active, .product_btn:hover {
+    border: 2px solid #0089FF;
+    color: #0089FF;
+    background-color: white;
+    /* transition: box-shadow 300ms ease-in-out, color 300ms ease-in-out; */
+    /* color: black;
+    background-color: rgb(123, 167, 248); */
+}
+
+
+

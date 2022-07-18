@@ -5,6 +5,7 @@ import axios from 'axios';
 import { USER_SERVER } from '../../../Config';
 import { withRouter } from 'react-router-dom';
 import { useSelector } from "react-redux";
+import './Navbar.css'
 
 function RightMenu(props) {
   const user = useSelector(state => state.user)
@@ -23,10 +24,10 @@ function RightMenu(props) {
     return (
       <Menu mode={props.mode}>
         <Menu.Item key="mail">
-          <a href="/login">Signin</a>
+          <a href="/login"><span>Signin</span></a>
         </Menu.Item>
         <Menu.Item key="app">
-          <a href="/register">Signup</a>
+          <a href="/register"><span>Signup</span></a>
         </Menu.Item>
       </Menu>
     )
@@ -34,23 +35,29 @@ function RightMenu(props) {
     return (
       <Menu mode={props.mode}>
         <Menu.Item key="history">
-          <a href="/history">History</a>
+          <a href="/history"><span>History</span></a>
         </Menu.Item>
 
         <Menu.Item key="upload">
-          <a href="/product/upload">Upload</a>
+          <a href="/product/upload"><span>Upload</span></a>
         </Menu.Item>
 
         <Menu.Item key="cart" style={{ paddingBottom: 3 }}>
           <Badge count={user.userData && user.userData.cart.length}>
             <a href="/user/cart" className="head-example" style={{ marginRight: -22, color: '#667777' }} >
-              <Icon type="shopping-cart" style={{ fontSize: 30, marginBottom: 3 }} />
+              <Icon type="shopping-cart" style={{ fontSize: 30, marginBottom: 3, color:'black'}} />
             </a>
           </Badge>
         </Menu.Item>
 
         <Menu.Item key="logout">
-          <a onClick={logoutHandler}>Logout</a>
+          <a style={{display:'flex', flexDirection:'row'}}onClick={logoutHandler}>
+            <div 
+            style={{marginRight: '0.25rem', width:'45px', height:'45px', backgroundColor: 'Gold', borderRadius:'50%', display:'grid', placeContent:'center'}}>
+                <img style={{ width:'25px', height:'25px'}} src='images/lego-login.png' />
+            </div>
+            <span>Log Out</span>
+          </a>
         </Menu.Item>
       </Menu>
     )

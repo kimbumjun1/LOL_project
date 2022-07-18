@@ -2,6 +2,7 @@ import React, { useState } from 'react';
 import { Input } from 'antd';
 import { useSelector } from 'react-redux';
 import styled from 'styled-components';
+import './Navbar.css'
 
 const {Search} = Input;
 const SearchBar = () => {
@@ -22,7 +23,7 @@ const SearchBar = () => {
 
     return (
         
-        <div>
+        <div className='search_bar'>
             <Search   
                 placeholder='Search here...' 
                 allowClear

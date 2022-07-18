@@ -7,6 +7,10 @@ import Slider from 'react-slick';
 import styled from 'styled-components';
 import useHover from '../../../hooks/useHover';
 import './Sections/LandingPage.css';
+import ToggleImages from "../../ToggleImages/ToggleImages.js"
+import { Route, Switch, Link } from 'react-router-dom';
+import {Button} from "semantic-ui-react";
+import DetailProductPage_copy from '../DetailProductPage/DetailProductPage_copy';
 
 function LandingPage() {
 
@@ -116,11 +120,21 @@ function LandingPage() {
     // style={{width:'60px', height:'60px', backgroundColor: 'Gold', borderRadius:'50%', display:'grid', placeContent:'center'}}>
     //     <img style={{width:'40px', height:'40px'}} src='images/lego-login.png' />
     // </div>
+    // <img style={{height: '70px'}} src='images/lego-font.png' />
+
+    const [active, setActive] = useState(false); /** 하트 좋아요에 이용 */
+    const handleChangeActive = () => {
+        setActive((previousHeart) => {
+            return !previousHeart;
+        });
+    };
 
     return (
-        <div style={{ width: '100%', margin: '10em auto' }} >
+        <div style={{ width: '100%', margin: '0 auto', paddingTop:'8em' }} >
             <div style={{ textAlign: 'center' }} >
-                <h2>NEW - 아무말이나 <Icon type="rocket" /> </h2>
+                <h1 style={{fontSize: '48px', fontWeight:'bold'}}>스토어.좋아하는 LEGO 제품을 <br/>
+                구입하는 가장 좋은 방법.</h1>
+
             </div>
 
             {/*Slider-bar-Carousel  - HEEJEONG*/}
@@ -132,7 +146,7 @@ function LandingPage() {
                     {imgHovered ? 
                     <div ><img 
                     style={hoveredSliderStyle} 
-                    src='images/legoImg5.jpg' /><a href='/'><button className='slider_btn' >View More</button></a></div> : 
+                    src='images/legoImg5.jpg' /><Link to="/DetailProductPage_copy"><Button className='slider_btn'>View More</Button></Link></div> : 
                     <div><img 
                     style={sliderStyle} 
                     src='images/legoImg2.jpg' /></div> }

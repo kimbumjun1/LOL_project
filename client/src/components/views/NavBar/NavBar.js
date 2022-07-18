@@ -26,7 +26,7 @@ function NavBar() {
       </div>
       <div className="menu__container">
         <div className="menu_left">
-          <LeftMenu mode="horizontal" />
+          <LeftMenu mode="horizontal" />  {/**mode="horizontal" 추가해주기 */}
         </div>
         {/*추가한부분 - Search-bar */}
         <div className="menu_rigth">

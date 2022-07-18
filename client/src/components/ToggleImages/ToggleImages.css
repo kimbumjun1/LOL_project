@@ -1,0 +1,9 @@
+.active {
+    width: 45px;
+    cursor: pointer;
+}
+  
+.inactive {
+    width: 45px;
+    cursor: pointer;
+}

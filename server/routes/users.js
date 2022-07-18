@@ -89,7 +89,7 @@ router.post("/addToCart", auth, (req, res) => {
                 }
             })
 
-            //상품이 이미 있을때
+            //상품이 이미 있을때 -> 상품 개수만 하나 올리기
             if (duplicate) {
                 User.findOneAndUpdate(
                     { _id: req.user._id, "cart.id": req.body.productId },
@@ -101,7 +101,7 @@ router.post("/addToCart", auth, (req, res) => {
                     }
                 )
             }
-            //상품이 이미 있지 않을때 
+            //상품이 이미 있지 않을때 -> 새롭게 만들어서 추가
             else {
                 User.findOneAndUpdate(
                     { _id: req.user._id },

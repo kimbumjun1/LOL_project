@@ -4,6 +4,7 @@ import { getCartItems, removeCartItem, onSuccessBuy } from '../../../_actions/us
 import UserCardBlock from './Sections/UserCardBlock';
 import { Empty, Result } from 'antd';
 import Paypal from '../../utils/Paypal';
+import "./Sections/CartPage.css"
 
 function CartPage(props) {
     const dispatch = useDispatch();
@@ -68,16 +69,42 @@ function CartPage(props) {
     }
 
 
-
     return (
-        <div style={{ width: '85%', margin: '3rem auto' }}>
-            <h1>My Cart</h1>
+        <div style={{ width: '80%', margin: '3rem auto' }}> {/**80% 3rem auto */}
 
-            <div>
-                <UserCardBlock products={props.user.cartDetail} removeItem={removeFromCart} />
+            <h1 style={{fontWeight:'bold'}}>My Cart</h1>
+            <div className='cart-container' style={{display:'flex'}}>
+                <div className='cartblock-container' style={{width: '60%', marginRight:'1em'}}>
+                    {/* 아이템 개수에 맞게 자동으로 생성되게 만들기 */}
+                    <UserCardBlock products={props.user.cartDetail} removeItem={removeFromCart} />
+                    <UserCardBlock products={props.user.cartDetail} removeItem={removeFromCart} />
+                    <UserCardBlock products={props.user.cartDetail} removeItem={removeFromCart} />
+                </div>
+
+                <div className='cart-info' style={{width:'40%'}}>
+                    <div className='cart-info-summary' style={{marginBottom:'1em', padding:'0.5em 1em'}}>
+                        <h2>주문요약</h2>
+                        <h3>배송비 </h3> {/* 합계 금액에 따라서 무료인지 아닌지 ? : 이용하기*/}
+                        <div style={{display:'flex'}}>
+                            <h2>합계</h2><h2>원</h2>
+                        </div>
+                        <button>결제</button>
+                    </div>
+                    
+                    <div className='cart-info-policy' style={{padding:'0.5em 1em'}} >
+                        <h2>배송 및 반품 정책</h2>
+                        <div><span>배송정책</span><span>교환, 반품 및 환불</span></div>
+                        <h2>결제 방식</h2>
+                        <img src='images/PayPal.svg' />
+                    </div>
+
+                </div>
+
             </div>
 
-            {ShowTotal ?
+            
+
+            {/* {ShowTotal ?
                 <div style={{ marginTop: '3rem' }}>
                     <h2>Total Amount: ${Total}</h2>
                 </div>
@@ -99,7 +126,7 @@ function CartPage(props) {
                     total={Total}
                     onSuccess={transactionSuccess}
                 />
-            }
+            } */}
 
         </div>
     )

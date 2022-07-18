@@ -1,5 +1,6 @@
 import React from 'react';
 import { Menu, MailOutlined, SettingOutlined} from 'antd';
+import './Navbar.css'
 
 const SubMenu = Menu.SubMenu;
 const MenuItemGroup = Menu.ItemGroup;
